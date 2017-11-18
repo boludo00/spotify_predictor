@@ -70,29 +70,9 @@ for i, s in enumerate(songs.iterrows()):
         logger.error("%s, %s --- on %s" % (type(e), e, s[1].song))
         # time.sleep(3)
 
-
+# throw features data into a file once finished (appending to original features)
 with open("features.json", "w") as f:
     json.dump(pd.read_pickle("features.pkl") + feats, f, indent=4)
 
 
 logger.info("Successfully added features for %d track ids (see features.json or .pkl file)" % (song_count - 1))
-
-
-# feats = []
-# feat_count = 0
-# for i, d in enumerate(ids):
-#     try:
-#         feats.append(sp.audio_features(tracks=[d[0]]))
-#         popl = sp.track(d[0])["popularity"]
-#         art_followers = sp.artist(d[3])
-#         song_date = sp.album(d[4])["release_date"]
-#         feats[i][0].update({"artist": d[1], "song": d[2], "popularity": popl, "artist_followers": art_followers["followers"]["total"], "release_date": song_date})
-#         logger.info("[%d] Added features for %s " % (feat_count, d[2]))
-#         feat_count += 1
-#     except:
-#         logger.warning("%s did not yield audio features!!!" % d[2])
-# with open("features.json") as f:
-#     real_data = json.loads(f.read())
-
-
-
