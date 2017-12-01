@@ -4,3 +4,4 @@ playground.ipynb
 figs/
 .ipynb_checkpoints/
 *.pyc
+.DS_Store
