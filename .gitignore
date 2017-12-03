@@ -1,7 +1,6 @@
 playground.ipynb
 *.json
 .cache-Giancarlo Perrone
-figs/
 .ipynb_checkpoints/
 *.pyc
 .DS_Store
